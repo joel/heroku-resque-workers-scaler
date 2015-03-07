@@ -32,7 +32,7 @@ module HerokuResqueAutoScale
 
       def shut_down_workers!
         return unless authorized?
-        @@heroku.formation.update(app_name, worker_name, { quantity: 0 })
+        @@heroku.formation.update(app_name, worker_name, { quantity: Config.minimum })
         nil
       end
 
