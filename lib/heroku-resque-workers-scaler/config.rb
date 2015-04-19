@@ -26,6 +26,10 @@ module HerokuResqueAutoScale
       @worker_name ||= config['worker_name']
     end
 
+    def minimum
+      @threshold ||= config['minimum']
+    end
+
     private
 
     def config
